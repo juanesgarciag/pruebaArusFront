@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+.top {
+    margin-top: 6rem;
+}
+
+.navFormButtons{
+    margin-right: 10px;
+}
+
+.brandMargin {
+    margin-left: 10px;
+}
+
+.form-login{
+    width: 22rem;
+    margin-top: 10rem;
+}
+
+.spaceBtn{
+    margin-right: 5px;
+}
+
+.intro {
+    height: 100%;
+  }
+  
+  @media (min-height: 300px) and (max-height: 450px) {
+    .intro {
+      height: auto;
+    }
+  }
+  
+  .gradient-custom {
+    background-image: linear-gradient(to right top, #8aff4c, #7dff43, #6eff39, #5dff2f, #46ff23, #37f61d, #24ec16, #00e30d, #00ce0e, #00ba0e, #00a60d, #00920c);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+  }
