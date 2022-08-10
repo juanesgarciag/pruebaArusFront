@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServerModel } from '../../models/server.model';
 import { ApiService } from '../../services/api.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-servers',
@@ -12,21 +13,25 @@ import Swal from 'sweetalert2';
 export class ServersComponent implements OnInit {
 
   @Input () tipo: boolean=true;
-
+  id: string = '';
   servers: ServerModel[] = [];
   controller: string = "servers";
 
   constructor(private apiService: ApiService,
-              private router: Router) { }
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id  = localStorage.getItem(environment.idUser)??'';
+    this.id = this.activatedRoute.snapshot.paramMap.get('id')??id; 
 
-    //recuperar localstorage id y enviar en el nuevo get
-    this.apiService.get('servers').subscribe((resp: any) => {
-      this.servers = resp.docs;
-      console.log(this.servers);
-    });
-  }
+  this.apiService.getAction('servers','byuser',this.id).subscribe((resp: any) => {
+    this.servers = resp;
+    console.log(this.servers);
+  
+
+  });
+}
 
   editar(id: string){
     this.router.navigate(['serveredit',id]);

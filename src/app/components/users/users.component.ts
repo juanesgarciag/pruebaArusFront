@@ -3,6 +3,7 @@ import { ApiService } from '../../services/api.service';
 import { UserModel } from '../../models/user.model';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-users',
@@ -13,6 +14,8 @@ export class UsersComponent implements OnInit {
 
   users: UserModel[] = [];
   controller: string = "users";
+  user: UserModel = new UserModel();
+
   constructor(
     private apiService: ApiService,
     private router: Router) { }
@@ -20,8 +23,13 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.get(this.controller).subscribe((resp: any)=> {
       this.users = resp.docs;
-      console.log(this.users)
     });
+
+    this.apiService.getById('users', localStorage.getItem(environment.idUser)??'').subscribe((resp: any)=>{
+      console.log(resp);
+      this.user = resp;
+    });
+    
   }
   editar(id: string){
     this.router.navigate(['useredit',id]);
@@ -60,7 +68,7 @@ export class UsersComponent implements OnInit {
     });
   }
   servidores(id: string){
-
+    this.router.navigate(['servers/', id]);
   }
 
 }
