@@ -9,6 +9,11 @@ import { UsersComponent } from './components/users/users.component';
 import { ServersComponent } from './components/servers/servers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { ServerEditComponent } from './components/server-edit/server-edit.component';
+import { FormsModule } from '@angular/forms';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewserverComponent } from './components/newserver/newserver.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -17,14 +22,18 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     DashboardComponent,
     UsersComponent,
     ServersComponent,
-    UserEditComponent
+    UserEditComponent,
+    ServerEditComponent,
+    NewUserComponent,
+    NewserverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

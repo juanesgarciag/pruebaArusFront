@@ -24,6 +24,10 @@
 .intro {
     height: 100%;
   }
+
+  .btm{
+    margin-bottom: 1rem;
+  }
   
   @media (min-height: 300px) and (max-height: 450px) {
     .intro {

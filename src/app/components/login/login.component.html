@@ -1,65 +1,54 @@
-<!-- 
-<form class="top">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Correo o usuario</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-      />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-        placeholder="Password"
-      />
-    </div>
-  
-    <button type="submit" class="btn btn-primary mt-2">Ingresar</button>
-  </form> -->
-  
+<section class="intro">
+  <div
+    class="mask d-flex align-items-center h-100"
+    style="background-color: #d6d6d6"
+  >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card" style="border-radius: 1rem">
+            <div class="card-body p-5 text-center">
+              <div class="my-md-5 pb-5">
+                <h1 class="fw-bold mb-0">Bienvenido</h1>
 
-  <section class="intro">
-    <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6;">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div class="card" style="border-radius: 1rem;">
-              <div class="card-body p-5 text-center">
-  
-                <div class="my-md-5 pb-5">
-  
-                  <h1 class="fw-bold mb-0">Bienvenido</h1>
-  
-                  <i class="fas fa-user-astronaut fa-3x my-5"></i>
-  
+                <i class="fas fa-user-astronaut fa-3x my-5"></i>
+                <form (ngSubmit)="submit(f)" #f="ngForm">
                   <div class="form-outline mb-4">
-                    <input type="email" id="typeEmail" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmail">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control form-control-lg"
+                      name="email"
+                      [(ngModel)]="usuario.email"
+                      required
+                    />
+                    <label class="form-label" for="email">Email</label>
                   </div>
-  
+
                   <div class="form-outline mb-5">
-                    <input type="password" id="typePassword" class="form-control form-control-lg" />
-                    <label class="form-label" for="typePassword">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control form-control-lg"
+                      name="password"
+                      [(ngModel)]="usuario.password"
+                      required
+                    />
+                    <label class="form-label" for="password">Password</label>
                   </div>
-  
-                  <button class="btn btn-primary btn-lg btn-rounded gradient-custom text-body px-5" type="submit">Login</button>
-  
-                </div>
-  
-                <div>
-                  <p class="mb-0">No tienes una cuenta? <a href="#!" class="text-body fw-bold">Sign Up</a></p>
-                </div>
-  
+
+                  <button
+                    class="btn btn-primary btn-lg btn-rounded gradient-custom text-body px-5"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

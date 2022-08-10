@@ -1,12 +1,13 @@
+import { UserModel } from './user.model';
 export class ServerModel {
 
-    id: String = "";
-    serverName: String = "";
+    _id: string = "";
+    serverName: string = "";
     serverCapacity: Number = 0;
     serverActuall: Number = 0
-    serverIp: String = "";
+    serverIp: string = "";
     serverOverloadAlert: Number = 0;
-    userAssociated: String = "";
+    userAssociated: string = "";
 ;
     constructor() {}
 }

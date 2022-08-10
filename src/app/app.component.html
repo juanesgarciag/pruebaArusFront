@@ -2,13 +2,16 @@
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <a class="navbar-brand brandMargin" href="#">PruebaArus</a>
     <form class="form-inline navFormButtons">
-      <button class="btn btn-success navFormButtons" type="button">Usuarios</button>
-      <button class="btn btn-success" type="button">Servidores</button>
+
+      <a class="btn btn-success navFormButtons" routerLink="users" *ngIf="authService.getLogin()">Usuarios</a> |
+      <a class="btn btn-success navFormButtons" routerLink="servers" *ngIf="authService.getLogin()">Servidores</a> |
+      
+      
+      <button type="button" class="btn btn-primary navFormButtons" (click)="salir()" *ngIf="authService.getLogin()">Salir</button> |
     </form>
   </nav>
 </div>
 
 <div class="top">
   <router-outlet></router-outlet>
-  
 </div>

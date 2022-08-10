@@ -1,6 +1,6 @@
-<h1 class="text-center">Editar Usuario</h1>
+<h1 class="text-center">Crear Usuario</h1>
 
-<form class="row g-3 needs-validation top" (ngSubmit)="submit( f )" #f="ngForm">
+<form class="row g-3 needs-validation top" (ngSubmit)="submit(f)" #f="ngForm">
   <div class="col-md-4">
     <div class="form-floating">
       <input
@@ -8,10 +8,10 @@
         class="form-control"
         id="firstName"
         name="firstName"
-        [(ngModel)]="user.userData.firstName"
+        [(ngModel)]="NewUser.userData.firstName"
         required
       />
-      <label for="user.userData.firstName" class="form-label">Primer Nombre</label>
+      <label for="NewUser.userData.firstName" class="form-label">Primer Nombre</label>
     </div>
   </div>
   <div class="col-md-4">
@@ -21,9 +21,9 @@
         class="form-control"
         id="middleName"
         name="middleName"
-        [(ngModel)]="user.userData.middleName"
+        [(ngModel)]="NewUser.userData.middleName"
       />
-      <label for="user.userData.middleName" class="form-label">Segundo Nombre</label>
+      <label for="NewUser.userData.middleName" class="form-label">Segundo Nombre</label>
     </div>
   </div>
   <div class="col-md-4">
@@ -33,9 +33,10 @@
         class="form-control"
         id="lastName"
         name="lastName"
-        [(ngModel)]="user.userData.lastName"
+        [(ngModel)]="NewUser.userData.lastName"
+        required
       />
-      <label for="user.userData.lastName" class="form-label">Primer Apellido</label>
+      <label for="NewUser.userData.lastName" class="form-label">Primer Apellido</label>
     </div>
   </div>
   <div class="col-md-4">
@@ -46,10 +47,10 @@
         id="userName"
         aria-describedby="inputGroupPrepend"
         name="userName"
-        [(ngModel)]="user.userName"
+        [(ngModel)]="NewUser.userName"
         required
       />
-      <label for="user.userName" class="form-label"
+      <label for="NewUser.userName" class="form-label"
         >Nombre de Usuario</label
       >
     </div>
@@ -57,21 +58,16 @@
   <div class="col-md-4">
     <div class="form-floating">
       <input
-        type="text"
-        class="form-control"
-        id="email"
-        type="text"
-        placeholder="Disabled input"
-        aria-label="disabled input example"
-        disabled
-        name="email"
-        [(ngModel)]="user.userData.email"
-        required
+      type="text"
+      class="form-control"
+      id="email"
+      name="email"
+      [(ngModel)]="NewUser.userData.email"
+      required
       />
       <label
-        for="user.userData.email"
+        for="NewUser.userData.email"
         class="form-label"
-        for="formControlDisabled"
         >Correo Electronico</label
       >
     </div>
@@ -83,15 +79,17 @@
         class="form-control"
         id="password"
         name="password"
-        [(ngModel)]="user.password"
+        [(ngModel)]="NewUser.password"
+        required
       />
-      <label for="user.password" class="form-label">Password</label>
+      <label for="NewUser.password" class="form-label">Password</label>
     </div>
   </div>
   <hr>
   <div class="d-grid gap-2 col-6 mx-auto mt-3">
-    <button class="btn btn-warning btn-lg" type="submit">
-      Actualizar
+    <button class="btn btn-primary btn-lg" type="submit">
+      Crear
     </button>
   </div>
 </form>
+

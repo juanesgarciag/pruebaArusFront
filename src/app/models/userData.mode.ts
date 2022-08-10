@@ -1,5 +1,5 @@
 export class UserDataModel {
-    firsName: String = "";
+    firstName: String = "";
     middleName: String = "";
     lastName: String = "";
     email: String = "";

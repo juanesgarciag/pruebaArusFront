@@ -1,0 +1,104 @@
+<h1 class="text-center">Editar Servidor</h1>
+
+<form class="row g-3 needs-validation top" (ngSubmit)="submit( f )" #f="ngForm">
+  <div class="col-md-4">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="serverName"
+        name="serverName"
+        [(ngModel)]="server.serverName"
+        required
+      />
+      <label for="server.serverName" class="form-label"
+        >Nombre del Servidor</label
+      >
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="serverCapacity"
+        name="serverCapacity"
+        [(ngModel)]="server.serverCapacity"
+      />
+      <label for="server.serverCapacity" class="form-label"
+        >Capacidad del Servicio</label
+      >
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="serverActuall"
+        name="serverActuall"
+        [(ngModel)]="server.serverActuall"
+      />
+      <label for="server.serverActuall" class="form-label"
+        >Capacidad Utilizada</label
+      >
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="serverIp"
+        name="serverIp"
+        [(ngModel)]="server.serverIp"
+        required
+      />
+      <label for="server.serverIp" class="form-label"
+        >Ip del Servidor</label
+      >
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="serverOverloadAlert"
+        name="serverOverloadAlert"
+        [(ngModel)]="server.serverOverloadAlert"
+        aria-describedby="inputGroupPrepend"
+        required
+      />
+      <label for="server.serverOverloadAlert" class="form-label"
+        >Alerta de ampliación de Servidor</label
+      >
+    </div>
+  </div>
+  <div class="col-md-4 btm">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="userAssociated"
+        name="userAssociated"
+        [(ngModel)]="user.userName"
+        type="text"
+        placeholder="Disabled input"
+        aria-label="disabled input example"
+        disabled
+      />
+      <label
+        for="server.userAssociated"
+        class="form-label"
+        for="formControlDisabled"
+        >Usuario</label
+      >
+    </div>
+  </div>
+  <br />
+  <hr />
+  <div class="d-grid gap-2 col-6 mx-auto mt-3">
+    <button class="btn btn-warning btn-lg" type="submit">Actualizar</button>
+  </div>
+</form>

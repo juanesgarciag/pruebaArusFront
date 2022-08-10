@@ -1,6 +1,6 @@
 import { UserDataModel } from './userData.mode';
 export class UserModel {
-    id: string  = "";
+    _id: string  = "";
     userName: String = "";
     password: String = "";
     role: String = "";
